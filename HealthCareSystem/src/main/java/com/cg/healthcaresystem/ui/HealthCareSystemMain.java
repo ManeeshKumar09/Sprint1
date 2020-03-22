@@ -5,8 +5,11 @@ import com.cg.healthcaresystem.service.TestService;
 import com.cg.healthcaresystem.service.UserService;
 import com.cg.healthcaresystem.dto.UserDto;
 import com.cg.healthcaresystem.exception.UserDefineException;
+import com.cg.healthcaresystem.exception.UserDetailException;
 import com.cg.healthcaresystem.dto.DiagnosticCenterDto;
 import com.cg.healthcaresystem.dto.TestDto;
+
+import java.util.InputMismatchException;
 //import java.util.ArrayList;
 //import java.util.List;
 import java.util.Scanner;
@@ -25,6 +28,7 @@ public class HealthCareSystemMain
 		Scanner scanInput = new Scanner(System.in);
 		int userInputChoice = 1;
 		
+		try {
 		// Start of the UI Loop
 		while(userInputChoice != 0) 
 		{
@@ -57,13 +61,13 @@ public class HealthCareSystemMain
 				case 2: //To add user details in database 
 					UserDto userObject=new UserDto();
 	
-					System.out.println("Enter the Role: ");
-					String inputUserRole=scanInput.next();
-					userObject.setUserId(inputUserRole);
+					
 						
 					System.out.println("Enter the Patient's Id: ");
 					String inputUserId=scanInput.next();
 					userObject.setUserId(inputUserId);
+					
+					
 					
 					System.out.println("Enter the Patient's Name: ");
 					String inputUserName=scanInput.next();
@@ -84,6 +88,15 @@ public class HealthCareSystemMain
 					System.out.println("Enter the Patient's Gender: ");
 					String inputUserGender=scanInput.next();
 					userObject.setGender(inputUserGender);
+					
+					try 
+					{
+						System.out.println(userServiceObject.addUserService(userObject));
+					}
+					catch(UserDetailException e)
+					{
+						System.out.println(e.getMessage());
+					}
 					
 					//userList.add(new UserDto(String userRole,String userId,String userName,long contactNo,String userEmail,int age,String gender));
 					//System.out.println(UserService.UserValidation(inputUserRole, inputUserId, inputUserName, inputUserContact, inputUserMail, inputUserAge,inputUserGender);
@@ -149,7 +162,14 @@ public class HealthCareSystemMain
 					}	
 				}	
 			}
+		}
+		System.out.println("---------Thankyou-----------");
 		scanInput.close();
 		}
+		catch(InputMismatchException e)
+    	{
+    		System.out.println("Choose correct option");
+    	}
+
 	}
 }

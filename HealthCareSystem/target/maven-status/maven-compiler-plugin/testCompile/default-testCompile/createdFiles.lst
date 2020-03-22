@@ -1,0 +1,6 @@
+com/cg/healthcaresystem/daotest/DiagnosticCenterDaoTest.class
+com/cg/healthcaresystem/servicetest/UserServiceTest.class
+com/cg/healthcaresystem/servicetest/DiagnosticCenterServiceTest.class
+com/cg/healthcaresystem/servicetest/TestServiceTest.class
+com/cg/healthcaresystem/daotest/TestDaoTest.class
+com/cg/healthcaresystem/daotest/UserDaoTest.class
