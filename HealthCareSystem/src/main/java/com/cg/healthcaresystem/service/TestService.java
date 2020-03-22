@@ -23,28 +23,6 @@ public class TestService
 		return testDao;
 	}
 	
-	/*public String addTestService(TestDto test) throws UserDefineException
-	{
-		if(String.valueOf(test.getTestId()).length()==0)
-		{	
-			throw new UserDefineException(" Diagnostic Center id cannot be zero!!");
-		}
-		if(String.valueOf(test.getTestId()).length()<4)
-		{	
-			throw new UserDefineException(" Diagnostic Center id cannot be less than 4 digits!!"); 
-		}
-		
-		if(testDao.addTestDao(test))
-		{
-			return "Added";
-		}
-		else
-		{
-			return "Not Added";
-		}
-		//return (testDao.addTestDao(test));
-	}*/
-	
 	public List<TestDto> displayTestService() 
 	{
 		return testDao.displayTestDao();

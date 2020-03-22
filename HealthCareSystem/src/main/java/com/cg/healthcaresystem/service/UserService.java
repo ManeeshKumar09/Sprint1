@@ -23,27 +23,28 @@ public class UserService
 	
 	//User Functionalities    
 	public UserDto addUserService(UserDto userObject) throws UserDefineException 
-	{		
-		UserDto result=null;
-	    if(String.valueOf(userObject.getUserId()).length()>=4)
-	    {
-	    	if(!(userObject.getUserName()).isEmpty()) 
-	    	{	
-	    		if(String.valueOf(userObject.getContactNo()).length()==10) 
-	    		{
+	{	
+		try
+		{
+			UserDto result=null;
+			if(String.valueOf(userObject.getUserId()).length()>=4)
+		    {
+				if(!(userObject.getUserName()).isEmpty()) 
+				{	
+					if(String.valueOf(userObject.getContactNo()).length()==10) 
+					{
 	    				UserDao userService=new UserDao();
 	    				result=userService.addUserDao(userObject);
-	    		}
-	    		else
-	    			throw new UserDefineException("contact Number should be of 10 digit");
-	    	}
-	    	else
-	    		throw new UserDefineException("Name can not be Null");
-	    }
-	    else
-	    	throw new UserDefineException("Id should be greater than 4 digits!");
-	    	
-	    if(result!=null) 
+					}
+					else
+						throw new UserDefineException("contact Number should be of 10 digit");
+				}
+				else
+					throw new UserDefineException("Name can not be Null");
+		    }
+			else
+				throw new UserDefineException("Id should be greater than 4 digits!");
+		if(result!=null) 
 	    {
 	    	throw new UserDefineException("User Registered");
 	    }
@@ -51,15 +52,6 @@ public class UserService
 	    {
 	    	return result;
 	    }
-	    
-		/*if(userDaoObject.addUserDao(userObject))
-		{
-			return "Added";
-		}
-		else
-		{
-			return "Not Added";
-		}*/
 	}
 
 	/*public UserDto UserValidation(String uRole, String uId, String uName, long uContact,

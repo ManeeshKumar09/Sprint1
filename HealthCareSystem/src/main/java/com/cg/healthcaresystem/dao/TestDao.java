@@ -27,11 +27,4 @@ public class TestDao
 	{
 		return newTestDetailsCollectionObject;
 	}
-	
-	/*public boolean addTestDao(TestDto testObject) 
-	{
-		newTestCollectionObject.add(testObject);
-    	TestRepository.setTestCollectionObject(newTestCollectionObject);
-		return true;
-	}*/
 }

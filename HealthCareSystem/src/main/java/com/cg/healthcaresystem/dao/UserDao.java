@@ -18,7 +18,6 @@ public class UserDao
 	{
 		this.newUserCollectionObject = newUserCollectionObject;
 	}
-	
 	public List<UserDto> getNewUserCollectionObject() 
 	{
 		return newUserCollectionObject;
@@ -35,4 +34,5 @@ public class UserDao
     	UserRepository.setUserCollectionObject(newUserCollectionObject);
 		return userObject;
 	}
+	
 }

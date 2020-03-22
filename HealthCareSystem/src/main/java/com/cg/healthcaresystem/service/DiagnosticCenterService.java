@@ -23,26 +23,6 @@ public class DiagnosticCenterService
 		return centerDao;
 	}
 
-	/*public String addDiagnosticCenterService(DiagnosticCenterDto center) throws UserDefineException
-	{
-		if(String.valueOf(center.getCenterId()).length()==0)
-		{	
-			throw new UserDefineException(" Diagnostic Center id cannot be zero!!");
-		}
-		if(String.valueOf(center.getCenterId()).length() < 4)
-		{	
-			throw new UserDefineException(" Diagnostic Center id cannot be less than 4 digits!!"); 
-		}
-		if(centerDao.addDiagnosticCenterDao(center))
-		{
-			return "Added";
-		}
-		else
-		{
-			return "Not Added";
-		}
-	}*/
-
 	public List<DiagnosticCenterDto> displayDiagnosticCenterService() 
 	{
 		return centerDao.displayDiagnosticCenterDao();

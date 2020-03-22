@@ -24,13 +24,6 @@ public class DiagnosticCenterDao
 		return newCenterCollectionObject;
 	}
 
-	/*public boolean addDiagnosticCenterDao(DiagnosticCenterDto center) 
-	{
-		newCenterCollectionObject.add(center);
-		//DiagnosticCenterRepository.setDiagnosticCenterCollectionObject(newCenterCollectionObject);
-		return true;
-	}*/
-
 	public List<DiagnosticCenterDto> displayDiagnosticCenterDao() 
 	{
 		return newCenterDetailsCollectionObject;
